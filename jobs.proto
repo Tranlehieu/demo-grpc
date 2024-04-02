@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+service JobsService {
+    rpc SearchJobs (JobQuery) returns (JobList) {}
+}
+
+message Job {
+    string id = 1;
+    string title = 2;
+    string company = 3;
+    string location = 4;
+    repeated string skills = 5;
+    string experience_level = 6; 
+    string job_type = 7; 
+    string posted_date = 8; 
+    repeated string reasons_to_join = 9; 
+    string salary = 10;
+    repeated Reason reasons_to_love_working_here = 11; 
+    string image_company = 12; 
+    string description = 13;
+    string requirements = 14; 
+}
+
+message JobList {
+    repeated Job jobs = 1;
+}
+
+message JobQuery {
+    repeated string skills = 1;
+    string title = 2;
+    string company = 3;
+    string location = 4;
+}
+
+message Reason {
+    string title = 1;
+    repeated string sub_reasons = 2;
+}

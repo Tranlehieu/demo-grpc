@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Job Search with gRPC and Node</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .logrocket {
+            background-color: #764abc;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4"
+                src="https://blog.logrocket.com/wp-content/uploads/2020/01/logrocket-blog-logo.png" alt="Logo"
+                height="72">
+            <h2>Job Search</h2>
+            <p class="lead">Example of job search made with Node.js, Express, Handlebars and gRPC</p>
+        </div>
+
+        <!-- Search Bar -->
+        <form action="/search" method="get">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search by title" name="title">
+                <input type="text" class="form-control" placeholder="Search by skills" name="skills">
+                <input type="text" class="form-control" placeholder="Search by company" name="company">
+                <input type="text" class="form-control" placeholder="Search by location" name="location">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Job List -->
+        <table class="table" id="jobs_table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Skills</th>
+                    <th>Experience Level</th>
+                    <th>Job Type</th>
+                    <th>Posted Date</th>
+                    <th>Reasons to Join</th>
+                    <th>Salary</th>
+                    <th>Reasons to Love Working Here</th>
+                    <th>Company Image</th>
+                    <th>Description</th>
+                    <th>Requirements</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each jobs}}
+                <tr>
+                    <td>{{ title }}</td>
+                    <td>{{ company }}</td>
+                    <td>{{ location }}</td>
+                    <td>{{ skills }}</td>
+                    <td>{{ experience_level }}</td>
+                    <td>{{ job_type }}</td>
+                    <td>{{ posted_date }}</td>
+                    <td>{{ reasons_to_join }}</td>
+                    <td>{{ salary }}</td>
+                    <td>
+                        {{#each reasons_to_love_working_here}}
+                            <strong>{{ title }}</strong>
+                            <ul>
+                                {{#each sub_reasons}}
+                                    <li>{{ this }}</li>
+                                {{/each}}
+                            </ul>
+                        {{/each}}
+                    </td>
+                    <td><img src="{{ image_company }}" alt="Company Image"></td>
+                    <td>{{ description }}</td>
+                    <td>{{ requirements }}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="13" class="text-center">No jobs found.</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
