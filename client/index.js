@@ -48,5 +48,5 @@ app.get("/search", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log("Server running at port %d", PORT);
+    console.log("Server running at localhost:%d", PORT);
 });
