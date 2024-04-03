@@ -12,8 +12,5 @@ npm start
  ```
 3. Navigate to the client directory and run the index file:
 ```
-cd client 
+cd client && node index
 ```
- ```
-node index
- ```
