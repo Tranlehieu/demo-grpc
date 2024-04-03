@@ -176,19 +176,19 @@ server.addService(jobsProto.JobsService.service, {
         let query = call.request;
         let matchedJobs = jobs.filter(job => {
             // Match by skills
-            if (query.skills.length > 0 && !query.skills.every(skill => job.skills.includes(skill))) {
+            if (query.skills.length > 0 && !query.skills.every(skill => job.skills.map(skill => skill.toLowerCase()).includes(skill.toLowerCase()))) {
                 return false;
             }
             // Match by title
-            if (query.title && !job.title.includes(query.title)) {
+            if (query.title && !job.title.toLowerCase().includes(query.title.toLowerCase())) {
                 return false;
             }
             // Match by company
-            if (query.company && !job.company.includes(query.company)) {
+            if (query.company && !job.company.toLowerCase().includes(query.company.toLowerCase())) {
                 return false;
             }
             // Match by location
-            if (query.location && !job.location.includes(query.location)) {
+            if (query.location && !job.location.toLowerCase().includes(query.location.toLowerCase())) {
                 return false;
             }
             return true;
