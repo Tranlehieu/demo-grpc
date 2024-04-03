@@ -24,7 +24,7 @@ const jobs = [
         skills: ["Ruby", "SQL"],
         experience_level: "Fresher",
         job_type: "Office",
-        posted_date: "19 days ago",
+        posted_date: "2024-04-03",
         reasons_to_join: [
             "International Working Environment",
             "Stronger Career Path / More opportunity",
@@ -66,7 +66,7 @@ const jobs = [
         skills: ["JavaScript", "React", "HTML", "CSS"],
         experience_level: "Senior",
         job_type: "Remote",
-        posted_date: "12 days ago",
+        posted_date: "2024-04-01",
         reasons_to_join: [
             "Flexible Remote Work",
             "Opportunity to Lead Exciting Projects",
@@ -103,7 +103,7 @@ const jobs = [
         skills: ["Python", "DevOps", "Data Analysis", "Security"],
         experience_level: "Fresher",
         job_type: "Remote",
-        posted_date: "12 days ago",
+        posted_date: "2024-03-28",
         reasons_to_join: [
             "Very competitive remuneration package",
             "Opportunity to Lead Exciting Projects",
@@ -140,7 +140,7 @@ const jobs = [
         skills: ["VueJS", "NodeJS", "SQL"],
         experience_level: "Fresher",
         job_type: "Remote",
-        posted_date: "12 days ago",
+        posted_date: "2024-03-27",
         reasons_to_join: [
             "People-first",
             "Teamwork over one's work",
